@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "AI QuickAssist",
+  "version": "1.0",
+  "description": "Select text anywhere and get an instant AI answer in a floating widget.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "contextMenus"
+  ],
+  "host_permissions": [
+    "http://localhost:3000/*"
+  ],
+  "background": {
+    "service_worker": "service_worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content_script.js"]
+    }
+  ],
+  "action": {
+    "default_title": "AI QuickAssist"
+  }
+}
